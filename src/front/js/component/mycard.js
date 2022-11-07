@@ -1,11 +1,19 @@
 import React from "react";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
+import "../../styles/mycard.css";
+import rigoImageUrl from "../../img/rigo-baby.jpg";
 
 export const MyCard = (props) => {
+  console.log("Donde esta el id del personaje?");
+  console.log(props);
   return (
-    <Card style={{ width: "18rem" }}>
-      <Card.Img variant="top" src="holder.js/100px180" />
+    <Card>
+      <Card.Img
+        variant="top"
+        src={`https://starwars-visualguide.com/assets/img/${props.type}/${props.item.uid}.jpg`}
+        alt={`Imagen de ${props.item.name}`}
+      />
       <Card.Body>
         <Card.Title>{props.item.name}</Card.Title>
         <Card.Text>
